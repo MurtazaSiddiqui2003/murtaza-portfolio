@@ -1,4 +1,5 @@
 import SiteHeader from "./components/site-header";
+import Reveal from "./components/reveal";
 
 const services = [
   {
@@ -61,20 +62,20 @@ export default function Home() {
           <div className="hero-orbit orbit-one" />
           <div className="hero-orbit orbit-two" />
           <div className="hero-inner">
-            <p className="eyebrow light-eyebrow">
+            <Reveal delay={0.05}><p className="eyebrow light-eyebrow">
               <span className="status-dot" />
               INDEPENDENT WEB DEVELOPER
               <span className="eyebrow-line" />
               PAKISTAN · WORKING WORLDWIDE
-            </p>
-            <h1>
+            </p></Reveal>
+            <Reveal delay={0.14}><h1>
               Digital experiences
               <br />
               made <em>to move</em>
               <br />
               business forward<span className="period">.</span>
-            </h1>
-            <div className="hero-bottom">
+            </h1></Reveal>
+            <Reveal delay={0.24}><div className="hero-bottom">
               <p className="hero-copy">
                 I build, improve and develop thoughtful websites and e-commerce
                 experiences for businesses ready to grow.
@@ -83,7 +84,7 @@ export default function Home() {
                 <span>Explore<br />my work</span>
                 <b>↓</b>
               </a>
-            </div>
+            </div></Reveal>
             <div className="hero-meta">
               <span>WEB DEVELOPMENT · E-COMMERCE · DIGITAL EXPERIENCES</span>
               <span>SCROLL TO EXPLORE ↓</span>
@@ -116,7 +117,7 @@ export default function Home() {
             </p>
           </div>
 
-          <article className="project project-featured">
+          <Reveal><article className="project project-featured">
             <ProjectLink href="https://sterlingbloom.vercel.app/" label="Visit Sterling Bloom website">
               <div className="browser-frame">
                 <div className="browser-bar"><i /><i /><i /><span>sterlingbloom.vercel.app</span></div>
@@ -142,9 +143,9 @@ export default function Home() {
               </div>
               <a className="arrow-link" href="https://sterlingbloom.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Sterling Bloom">↗</a>
             </div>
-          </article>
+          </article></Reveal>
 
-          <article className="project project-secondary">
+          <Reveal delay={0.08}><article className="project project-secondary">
             <ProjectLink href="https://thecrccore.vercel.app/" label="Visit CRC Core website">
               <div className="crc-art">
                 <div className="crc-symbol">CRC<span>.</span></div>
@@ -164,7 +165,7 @@ export default function Home() {
               </div>
               <a className="arrow-link" href="https://thecrccore.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open CRC Core">↗</a>
             </div>
-          </article>
+          </article></Reveal>
           <p className="work-note">
             Project visuals are illustrative previews for this first build.
             We&apos;ll replace them with approved screenshots of the live work before launch.
@@ -182,11 +183,11 @@ export default function Home() {
           </div>
           <div className="service-list">
             {services.map((service) => (
-              <article className="service-row" key={service.number}>
+              <Reveal key={service.number}><article className="service-row">
                 <span className="service-no">{service.number}</span>
                 <div><h3>{service.title}</h3><p>{service.description}</p></div>
                 <span className="service-arrow">↗</span>
-              </article>
+              </article></Reveal>
             ))}
           </div>
         </section>
@@ -223,16 +224,16 @@ export default function Home() {
           </div>
           <div className="process-grid">
             {process.map(([number, title, description]) => (
-              <article key={number}>
+              <Reveal key={number}><article>
                 <span>{number}</span><h3>{title}</h3><p>{description}</p>
-              </article>
+              </article></Reveal>
             ))}
           </div>
         </section>
 
         <section className="contact-section dark-section section-pad" id="contact">
           <SectionKicker left="06 / HAVE A PROJECT IN MIND?" right="LET'S MAKE IT HAPPEN" light />
-          <div className="contact-main">
+          <Reveal className="contact-main">
             <p className="eyebrow light-eyebrow">GOOD WORK STARTS WITH A CONVERSATION</p>
             <h2>Let&apos;s build<br />something <em>that matters.</em></h2>
             <p className="contact-copy">
@@ -242,7 +243,7 @@ export default function Home() {
             <a className="contact-button" href="https://github.com/MurtazaSiddiqui2003" target="_blank" rel="noreferrer">
               Connect with me on GitHub <span>↗</span>
             </a>
-          </div>
+          </Reveal>
           <div className="contact-bottom">
             <span>OPEN TO FREELANCE PROJECTS</span>
             <span>PAKISTAN · AVAILABLE REMOTELY</span>
