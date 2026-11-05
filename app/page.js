@@ -252,7 +252,7 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <a className="wordmark" href="#top">MS<span>.</span></a>
+        <a className="wordmark" href="#top" aria-label="Murtaza Siddiqui home"><img className="brand-logo footer-logo" src="/images/logo.jpg" alt="Murtaza Siddiqui logo" /></a>
         <span>© {new Date().getFullYear()} MURTAZA SIDDIQUI</span>
         <a href="#top">BACK TO TOP ↑</a>
       </footer>
