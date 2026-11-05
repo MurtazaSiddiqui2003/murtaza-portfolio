@@ -14,7 +14,7 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Murtaza Siddiqui home">
-        MS<span>.</span>
+        <img className="brand-logo" src="/images/logo.jpg" alt="Murtaza Siddiqui logo" />
       </a>
 
       <button
