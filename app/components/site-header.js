@@ -3,9 +3,13 @@
 import { useState } from "react";
 
 const links = [
-  { label: "Work", href: "#work" },
+  { label: "Home", href: "#home" },
+  { label: "Projects", href: "#work" },
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
+  { label: "Process", href: "#process" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function SiteHeader() {
@@ -13,10 +17,7 @@ export default function SiteHeader() {
 
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Murtaza Siddiqui home">
-        <img className="brand-logo" src="/images/logo.jpg" alt="Murtaza Siddiqui logo" />
-      </a>
-
+      <a className="wordmark" href="#top" aria-label="Murtaza Siddiqui home">M.</a>
       <button
         className={`menu-toggle ${open ? "is-open" : ""}`}
         type="button"
@@ -28,7 +29,6 @@ export default function SiteHeader() {
         <span />
         <span />
       </button>
-
       <nav id="primary-nav" className={`nav ${open ? "nav-open" : ""}`}>
         {links.map((link) => (
           <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
@@ -36,7 +36,7 @@ export default function SiteHeader() {
           </a>
         ))}
         <a className="nav-cta" href="#contact" onClick={() => setOpen(false)}>
-          Let&apos;s talk <span>↗</span>
+          Let&apos;s Talk <span>→</span>
         </a>
       </nav>
     </header>
