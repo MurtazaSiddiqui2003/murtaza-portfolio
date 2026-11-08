@@ -357,3 +357,96 @@ body { background: var(--paper); color: var(--white); }
   .nav.nav-open { border-color: #263449; }
   .nav .nav-cta { border-color: rgba(215,190,160,.72); }
 }
+
+
+/* Expanded project showcase */
+.project-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 58px 28px;
+}
+.showcase-card { min-width: 0; }
+.showcase-art {
+  min-height: 340px;
+  aspect-ratio: 1.42 / 1;
+  padding: 25px 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(160,180,210,.18);
+  isolation: isolate;
+  transition: transform .35s ease, border-color .35s ease;
+}
+.showcase-art:hover { transform: translateY(-5px); border-color: rgba(215,190,160,.65); }
+.showcase-art::before, .showcase-art::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+.showcase-art::before {
+  width: 70%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  right: -18%;
+  top: -35%;
+}
+.showcase-art::after {
+  width: 52%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 50%;
+  right: -8%;
+  top: -19%;
+}
+.showcase-art-top, .showcase-art-line, .showcase-art-open {
+  font-size: 8px;
+  letter-spacing: 1.7px;
+  font-weight: 700;
+}
+.showcase-art-top { opacity: .72; }
+.showcase-art-mark {
+  font: 400 clamp(58px, 9vw, 112px)/.9 Georgia, "Times New Roman", serif;
+  letter-spacing: -.08em;
+  align-self: center;
+  text-align: center;
+}
+.showcase-art-line { opacity: .72; }
+.showcase-art-open {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  border: 1px solid currentColor;
+  padding: 10px 12px;
+  font-size: 7px;
+}
+.project-art-sterling { background: linear-gradient(135deg,#26364a,#101b2c 62%,#17243a); color: #eee5d7; }
+.project-art-sterling .showcase-art-mark { letter-spacing: .04em; font-size: clamp(42px,6vw,76px); }
+.project-art-crc { background: linear-gradient(135deg,#202d3d,#0d1727 65%,#1b2b40); color: #e9e4dc; }
+.project-art-crc .showcase-art-mark { font-family: Arial,sans-serif; font-weight: 800; letter-spacing: -.12em; }
+.project-art-eisha { background: linear-gradient(135deg,#4a3945,#1d1b2b 65%,#302738); color: #f1e7df; }
+.project-art-eisha .showcase-art-mark { font-style: italic; font-size: clamp(82px,11vw,140px); }
+.project-art-forme { background: linear-gradient(135deg,#c9bca9,#786b60 60%,#34363a); color: #171a1d; }
+.project-art-forme::before, .project-art-forme::after { border-color: rgba(20,22,24,.18); }
+.project-art-forme .showcase-art-mark { font: 500 clamp(42px,6vw,76px)/1 Georgia,serif; letter-spacing: .02em; }
+.project-art-junaid { background: linear-gradient(135deg,#3b424b,#151c27 62%,#252f3d); color: #f1eee8; }
+.project-art-junaid .showcase-art-mark { font-family: Arial,sans-serif; font-weight: 800; letter-spacing: -.12em; }
+.project-art-eishaverse { background: linear-gradient(135deg,#343d54,#151d31 60%,#25243a); color: #eee8df; }
+.project-art-eishaverse .showcase-art-mark { font-style: italic; font-size: clamp(72px,10vw,124px); }
+.showcase-card-info { padding: 19px 2px 0; }
+.showcase-card-meta { display: flex; align-items: center; justify-content: space-between; color: #95a3b6; font-size: 8px; letter-spacing: 1.25px; font-weight: 700; }
+.showcase-card-meta a { font-size: 20px; color: var(--accent); }
+.showcase-card-info h3 { margin: 11px 0 8px; color: var(--white); font: 400 29px Georgia,serif; letter-spacing: -.04em; }
+.showcase-card-info p { max-width: 520px; margin: 0 0 15px; color: #aab4c4; font-size: 12px; line-height: 1.8; }
+.showcase-card-info .tags { gap: 7px; }
+@media (max-width: 760px) {
+  .project-showcase-grid { grid-template-columns: 1fr; gap: 42px; }
+  .showcase-art { min-height: 265px; aspect-ratio: 1.35 / 1; padding: 20px; }
+  .showcase-art-mark { font-size: clamp(64px,17vw,100px); }
+  .project-art-forme .showcase-art-mark { font-size: clamp(42px,12vw,66px); }
+  .showcase-card-info h3 { font-size: 26px; }
+  .showcase-card-info p { font-size: 11px; }
+}
