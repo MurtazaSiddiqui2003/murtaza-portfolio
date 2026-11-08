@@ -35,6 +35,76 @@ const process = [
   ["04", "Launch & support", "We get your website live and discuss the support you need after launch."],
 ];
 
+
+const projects = [
+  {
+    number: "01",
+    type: "CLIENT WEBSITE",
+    title: "Sterling Bloom",
+    description: "A refined digital home for an event design and decor business, with custom site functionality and an administrative experience.",
+    tags: ["Next.js", "Responsive design", "Admin experience"],
+    href: "https://sterlingbloom.vercel.app/",
+    mark: "SB",
+    line: "EVENT DESIGN & DECOR",
+    theme: "project-art-sterling",
+  },
+  {
+    number: "02",
+    type: "BUSINESS WEBSITE",
+    title: "CRC Core",
+    description: "A focused business website built to give the brand a clear online presence, supported by custom content and admin functionality.",
+    tags: ["Web development", "Content structure", "Admin features"],
+    href: "https://thecrccore.vercel.app/",
+    mark: "CRC.",
+    line: "BUILT FOR WHAT'S NEXT",
+    theme: "project-art-crc",
+  },
+  {
+    number: "03",
+    type: "MULTI-STORE E-COMMERCE",
+    title: "Eisha's Collection",
+    description: "A connected fashion, beauty and jewelry brand direction, bringing multiple storefront ideas into one cohesive digital identity.",
+    tags: ["E-commerce", "Brand direction", "Storefronts"],
+    href: "https://eishas.vercel.app/",
+    mark: "E.",
+    line: "FASHION · BEAUTY · JEWELRY",
+    theme: "project-art-eisha",
+  },
+  {
+    number: "04",
+    type: "FASHION EDITORIAL CONCEPT",
+    title: "ForMe",
+    description: "A luxury fashion lookbook concept exploring editorial art direction, considered typography and expressive motion.",
+    tags: ["Next.js", "GSAP", "Editorial design"],
+    href: "https://forme-mu-dun.vercel.app/",
+    mark: "FORME",
+    line: "THE ART OF DRESSING",
+    theme: "project-art-forme",
+  },
+  {
+    number: "05",
+    type: "CREATIVE PROFESSIONAL PORTFOLIO",
+    title: "Junaid's Portfolio",
+    description: "A bold portfolio for a fashion and technical designer, bringing technical drawings, graphic design and creative work together.",
+    tags: ["Portfolio", "Responsive design", "Motion"],
+    href: "https://syed-junaid-shah.vercel.app/",
+    mark: "JS.",
+    line: "FASHION · TECHNICAL · GRAPHIC",
+    theme: "project-art-junaid",
+  },
+  {
+    number: "06",
+    type: "PERSONAL DIGITAL EXPERIENCE",
+    title: "Eishaverse",
+    description: "A premium personal universe designed to bring personality, memories and meaningful details into one expressive digital experience.",
+    tags: ["Next.js", "Creative direction", "Interaction"],
+    href: "https://eishaverse.vercel.app/",
+    mark: "EV",
+    line: "A PERSONAL UNIVERSE",
+    theme: "project-art-eishaverse",
+  },
+];
+
 function SectionKicker({ left, right, light = false }) {
   return (
     <div className={`section-kicker ${light ? "section-kicker-light" : ""}`}>
@@ -108,67 +178,43 @@ export default function Home() {
         </section>
 
         <section className="work-section section-pad" id="work">
-          <SectionKicker left="02 / SELECTED WORK" right="REAL PROJECTS, PRACTICAL SOLUTIONS" />
+          <SectionKicker left="02 / SELECTED WORK" right="A GROWING BODY OF DIGITAL WORK" />
           <div className="section-heading">
             <h2>Selected <em>work.</em></h2>
             <p>
-              A look at projects where I&apos;ve helped shape the digital
-              experience, from the first impression to the details behind the scenes.
+              From client websites to creative concepts and personal digital
+              experiences, each project is an opportunity to solve a different problem.
             </p>
           </div>
 
-          <Reveal><article className="project project-featured">
-            <ProjectLink href="https://sterlingbloom.vercel.app/" label="Visit Sterling Bloom website">
-              <div className="browser-frame">
-                <div className="browser-bar"><i /><i /><i /><span>sterlingbloom.vercel.app</span></div>
-                <div className="mock-site sterling-mock">
-                  <span className="mock-brand">STERLING BLOOM</span>
-                  <div className="mock-center">
-                    <small>EVENT DESIGN & DECOR</small>
-                    <strong>Making moments<br />unforgettable.</strong>
-                    <span className="mock-button">DISCOVER OUR WORK</span>
+          <div className="project-showcase-grid">
+            {projects.map((project) => (
+              <Reveal key={project.number}>
+                <article className="showcase-card">
+                  <a className={`showcase-art ${project.theme}`} href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}`}>
+                    <span className="showcase-art-top">{project.type}</span>
+                    <span className="showcase-art-mark">{project.mark}</span>
+                    <span className="showcase-art-line">{project.line}</span>
+                    <span className="showcase-art-open">VIEW PROJECT ↗</span>
+                  </a>
+                  <div className="showcase-card-info">
+                    <div className="showcase-card-meta">
+                      <span>{project.number} / {project.type}</span>
+                      <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title}`}>↗</a>
+                    </div>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <div className="tags">
+                      {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
                   </div>
-                </div>
-              </div>
-            </ProjectLink>
-            <div className="project-info">
-              <div>
-                <p className="project-index">01 — CLIENT WEBSITE</p>
-                <h3>Sterling Bloom</h3>
-                <p className="project-desc">
-                  A refined digital home for an event design and decor business,
-                  with custom site functionality and an administrative experience.
-                </p>
-                <div className="tags"><span>Website development</span><span>Responsive design</span><span>Admin features</span></div>
-              </div>
-              <a className="arrow-link" href="https://sterlingbloom.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open Sterling Bloom">↗</a>
-            </div>
-          </article></Reveal>
-
-          <Reveal delay={0.08}><article className="project project-secondary">
-            <ProjectLink href="https://thecrccore.vercel.app/" label="Visit CRC Core website">
-              <div className="crc-art">
-                <div className="crc-symbol">CRC<span>.</span></div>
-                <div className="crc-lines"><b>Built for<br />what&apos;s next.</b><i /><i /><i /></div>
-                <span className="crc-label">BUSINESS WEBSITE / DIGITAL PRESENCE</span>
-              </div>
-            </ProjectLink>
-            <div className="project-info">
-              <div>
-                <p className="project-index">02 — BUSINESS WEBSITE</p>
-                <h3>CRC Core</h3>
-                <p className="project-desc">
-                  A focused business website designed to give the brand a clear,
-                  professional online presence, supported by custom functionality.
-                </p>
-                <div className="tags"><span>Web development</span><span>Content structure</span><span>Admin functionality</span></div>
-              </div>
-              <a className="arrow-link" href="https://thecrccore.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open CRC Core">↗</a>
-            </div>
-          </article></Reveal>
+                </article>
+              </Reveal>
+            ))}
+          </div>
           <p className="work-note">
-            Project visuals are illustrative previews for this first build.
-            We&apos;ll replace them with approved screenshots of the live work before launch.
+            Project covers are editorial representations, not screenshots of the live websites.
+            They keep the showcase visually consistent while the final approved project captures are prepared.
           </p>
         </section>
 
