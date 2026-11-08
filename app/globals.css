@@ -527,3 +527,52 @@ body { background: var(--paper); color: var(--white); }
   .preview-address { font-size: 8px; }
   .preview-fallback { font-size: 8px; }
 }
+
+
+/* Mobile width and overflow corrections */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*, *::before, *::after { min-width: 0; }
+img, video, iframe { max-width: 100%; }
+
+@media (max-width: 760px) {
+  .hero, .section-pad, .site-header, .footer { max-width: 100%; }
+  .hero { padding-left: 6%; padding-right: 6%; }
+  .hero-inner { width: 100%; min-width: 0; }
+  .hero .light-eyebrow { flex-wrap: wrap; row-gap: 9px; line-height: 1.5; }
+  .hero h1 { max-width: 100%; font-size: clamp(40px, 10.5vw, 68px); overflow-wrap: break-word; }
+  .hero-bottom { width: 100%; gap: 14px; }
+  .hero-copy { min-width: 0; }
+  .hero-meta { flex-wrap: wrap; line-height: 1.6; }
+  .section-kicker { flex-wrap: wrap; align-items: flex-start; line-height: 1.5; }
+  .section-kicker span { min-width: 0; }
+  .intro-grid, .about-grid, .project-showcase-grid, .process-grid { min-width: 0; }
+  .project-showcase-grid { grid-template-columns: minmax(0, 1fr); }
+  .showcase-card, .showcase-card-info { min-width: 0; width: 100%; }
+  .showcase-preview { width: 100%; min-width: 0; }
+  .showcase-iframe { display: block; width: 100%; max-width: 100%; }
+  .showcase-card-info h3, .showcase-card-info p { overflow-wrap: anywhere; }
+  .showcase-card-meta { gap: 10px; flex-wrap: wrap; }
+  .tags { min-width: 0; }
+  .service-row { grid-template-columns: 26px minmax(0, 1fr) 18px; }
+  .service-row h3, .service-row p { overflow-wrap: anywhere; }
+  .about-mark { font-size: clamp(120px, 38vw, 180px); }
+  .contact-main h2 { max-width: 100%; overflow-wrap: break-word; }
+  .contact-bottom { flex-wrap: wrap; line-height: 1.6; }
+  .footer { gap: 12px; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: clamp(38px, 10vw, 44px); }
+  .hero-bottom { align-items: center; }
+  .hero-copy { max-width: none; }
+  .round-link { flex: 0 0 64px; }
+  .section-pad { padding-left: 5%; padding-right: 5%; }
+  .preview-browser-bar { grid-template-columns: 32px minmax(0, 1fr) 44px; gap: 5px; padding: 0 7px; }
+  .preview-address { font-size: 7px; }
+  .footer { padding-left: 5%; padding-right: 5%; }
+}
