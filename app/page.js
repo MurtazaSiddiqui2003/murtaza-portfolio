@@ -225,8 +225,8 @@ export default function Home() {
             ))}
           </div>
           <p className="work-note">
-            Project covers are editorial representations, not screenshots of the live websites.
-            They keep the showcase visually consistent while the final approved project captures are prepared.
+            Live previews are embedded where supported. If a website limits embedded viewing,
+            use the OPEN link above to explore the full experience.
           </p>
         </section>
 
