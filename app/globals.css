@@ -450,3 +450,80 @@ body { background: var(--paper); color: var(--white); }
   .showcase-card-info h3 { font-size: 26px; }
   .showcase-card-info p { font-size: 11px; }
 }
+
+
+/* Live website previews */
+.showcase-preview {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.42 / 1;
+  min-height: 340px;
+  border: 1px solid rgba(160,180,210,.2);
+  background: #111d30;
+  box-shadow: 0 18px 50px rgba(0,0,0,.2);
+}
+.preview-browser-bar {
+  height: 34px;
+  display: grid;
+  grid-template-columns: 46px minmax(0,1fr) 58px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  position: relative;
+  z-index: 2;
+  background: #17243a;
+  border-bottom: 1px solid #2a3a52;
+  color: #b9c5d5;
+}
+.preview-dots { display: flex; gap: 5px; }
+.preview-dots i { display: block; width: 6px; height: 6px; border-radius: 50%; background: #71829a; }
+.preview-address {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 9px;
+  color: #9eacc0;
+}
+.preview-browser-bar > a {
+  justify-self: end;
+  font-size: 8px;
+  letter-spacing: .8px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.showcase-iframe {
+  display: block;
+  width: 100%;
+  height: calc(100% - 34px);
+  min-height: 306px;
+  border: 0;
+  background: #101827;
+}
+.preview-fallback {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  background: rgba(8,14,25,.88);
+  color: #c2ccda;
+  font-size: 9px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.preview-fallback a { color: var(--accent); text-decoration: underline; pointer-events: auto; }
+.showcase-preview:focus-within .preview-fallback,
+.showcase-preview:hover .preview-fallback { opacity: 1; }
+@media (max-width: 760px) {
+  .showcase-preview { min-height: 265px; aspect-ratio: 1.35 / 1; }
+  .showcase-iframe { min-height: 231px; }
+  .preview-browser-bar { height: 34px; grid-template-columns: 38px minmax(0,1fr) 52px; gap: 7px; padding: 0 9px; }
+  .preview-address { font-size: 8px; }
+  .preview-fallback { font-size: 8px; }
+}
