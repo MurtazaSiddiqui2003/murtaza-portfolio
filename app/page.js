@@ -191,7 +191,8 @@ export default function Home() {
             {projects.map((project) => (
               <Reveal key={project.number}>
                 <article className="showcase-card">
-                  <ProjectPreview title={project.title} href={project.href} />\n                  <div className="showcase-card-info">
+                  <ProjectPreview title={project.title} href={project.href} />
+                  <div className="showcase-card-info">
                     <div className="showcase-card-meta">
                       <span>{project.number} / {project.type}</span>
                       <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title}`}>↗</a>
