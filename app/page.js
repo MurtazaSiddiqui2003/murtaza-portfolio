@@ -1,6 +1,7 @@
 import SiteHeader from "./components/site-header";
 import Reveal from "./components/reveal";
 import ProjectPreview from "./components/project-preview";
+import projects from "../content/projects.json";
 
 const services = [
   {
@@ -36,92 +37,6 @@ const process = [
   ["04", "Launch & support", "We get your website live and discuss the support you need after launch."],
 ];
 
-
-const projects = [
-  {
-    number: "01",
-    featured: true,
-    type: "CLIENT WEBSITE",
-    title: "Sterling Bloom",
-    caseStudyPath: "/work/sterling-bloom",
-    description: "A refined digital home for an event design and decor business, with custom site functionality and an administrative experience.",
-    tags: ["Next.js", "Responsive design", "Admin experience"],
-    href: "https://sterlingbloom.vercel.app/",
-    mark: "SB",
-    line: "EVENT DESIGN & DECOR",
-    theme: "project-art-sterling",
-  },
-  {
-    number: "02",
-    featured: true,
-    type: "BUSINESS WEBSITE",
-    title: "CRC Core",
-    caseStudyPath: "/work/crc-core",
-    description: "A focused business website built to give the brand a clear online presence, supported by custom content and admin functionality.",
-    tags: ["Web development", "Content structure", "Admin features"],
-    href: "https://thecrccore.vercel.app/",
-    mark: "CRC.",
-    line: "BUILT FOR WHAT'S NEXT",
-    theme: "project-art-crc",
-  },
-  {
-    number: "03",
-    featured: true,
-    type: "CORPORATE WEBSITE · IN DEVELOPMENT",
-    title: "Naeem Impex",
-    caseStudyPath: "/work/naeem-impex",
-    description: "A corporate digital presence for a textile and apparel manufacturer, focused on communicating its in-house production capabilities.",
-    tags: ["Corporate website", "Textile manufacturing", "Next.js"],
-    href: null,
-    status: "IN DEVELOPMENT",
-  },
-  {
-    number: "04",
-    featured: true,
-    type: "MULTI-STORE E-COMMERCE",
-    title: "Eisha's Collection",
-    caseStudyPath: "/work/eishas-collection",
-    description: "A connected fashion, beauty and jewelry brand direction, bringing multiple storefront ideas into one cohesive digital identity.",
-    tags: ["E-commerce", "Brand direction", "Storefronts"],
-    href: "https://eishas.vercel.app/",
-    mark: "E.",
-    line: "FASHION · BEAUTY · JEWELRY",
-    theme: "project-art-eisha",
-  },
-  {
-    number: "05",
-    type: "FASHION EDITORIAL CONCEPT",
-    title: "ForMe",
-    description: "A luxury fashion lookbook concept exploring editorial art direction, considered typography and expressive motion.",
-    tags: ["Next.js", "GSAP", "Editorial design"],
-    href: "https://forme-mu-dun.vercel.app/",
-    mark: "FORME",
-    line: "THE ART OF DRESSING",
-    theme: "project-art-forme",
-  },
-  {
-    number: "06",
-    type: "CREATIVE PROFESSIONAL PORTFOLIO",
-    title: "Junaid's Portfolio",
-    description: "A bold portfolio for a fashion and technical designer, bringing technical drawings, graphic design and creative work together.",
-    tags: ["Portfolio", "Responsive design", "Motion"],
-    href: "https://syed-junaid-shah.vercel.app/",
-    mark: "JS.",
-    line: "FASHION · TECHNICAL · GRAPHIC",
-    theme: "project-art-junaid",
-  },
-  {
-    number: "07",
-    type: "PERSONAL DIGITAL EXPERIENCE",
-    title: "Eishaverse",
-    description: "A premium personal universe designed to bring personality, memories and meaningful details into one expressive digital experience.",
-    tags: ["Next.js", "Creative direction", "Interaction"],
-    href: "https://eishaverse.vercel.app/",
-    mark: "EV",
-    line: "A PERSONAL UNIVERSE",
-    theme: "project-art-eishaverse",
-  },
-];
 
 function SectionKicker({ left, right, light = false }) {
   return (
