@@ -1,19 +1,21 @@
 "use client";
 
 import { useState } from "react";
-
-const links = [
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-];
+import { usePathname } from "next/navigation";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const home = pathname === "/";
+  const links = [
+    { label: "Work", href: home ? "#work" : "/#work" },
+    { label: "Services", href: home ? "#services" : "/#services" },
+    { label: "About", href: home ? "#about" : "/#about" },
+  ];
 
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Murtaza Siddiqui home">
+      <a className="wordmark" href="/#top" aria-label="Murtaza Siddiqui home">
         <img className="brand-logo" src="/images/logo.jpg" alt="Murtaza Siddiqui logo" />
       </a>
 
@@ -35,7 +37,7 @@ export default function SiteHeader() {
             {link.label}
           </a>
         ))}
-        <a className="nav-cta" href="#contact" onClick={() => setOpen(false)}>
+        <a className="nav-cta" href={home ? "#contact" : "/#contact"} onClick={() => setOpen(false)}>
           Let&apos;s talk <span>↗</span>
         </a>
       </nav>
