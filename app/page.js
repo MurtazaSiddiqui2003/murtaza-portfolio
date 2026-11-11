@@ -216,6 +216,11 @@ export default function Home() {
                     <div className="tags">
                       {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                     </div>
+                    {project.title === "Sterling Bloom" && (
+                      <a className="case-study-card-link" href="/work/sterling-bloom">
+                        READ CASE STUDY <span>↗</span>
+                      </a>
+                    )}
                   </div>
                 </article>
               </Reveal>
