@@ -3,16 +3,15 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-const links = [
-  { label: "Work", href: home ? "#work" : "/#work" },
-  { label: "Services", href: home ? "#services" : "/#services" },
-  { label: "About", href: home ? "#about" : "/#about" },
-];
-
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const home = pathname === "/";
+  const links = [
+    { label: "Work", href: home ? "#work" : "/#work" },
+    { label: "Services", href: home ? "#services" : "/#services" },
+    { label: "About", href: home ? "#about" : "/#about" },
+  ];
 
   return (
     <header className="site-header">
