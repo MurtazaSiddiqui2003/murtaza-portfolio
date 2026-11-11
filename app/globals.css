@@ -839,3 +839,72 @@ img, video, iframe { max-width: 100%; }
   .case-capability p { grid-column: 2; }
   .case-next { padding-top: 64px; padding-bottom: 64px; }
 }
+
+
+/* Private portfolio admin */
+.admin-shell { min-height:100vh; padding:34px 7.2% 80px; color:#f1eee8; background:#0b1422; }
+.admin-login-shell { display:grid; align-items:center; justify-items:center; padding-top:70px; padding-bottom:70px; }
+.admin-back { color:#aeb9c8; font-size:9px; font-weight:700; letter-spacing:1.25px; }
+.admin-login-shell > .admin-back { justify-self:start; width:100%; max-width:520px; }
+.admin-login-card { width:100%; max-width:520px; margin:auto; padding:48px; border:1px solid rgba(220,228,238,.15); background:rgba(255,255,255,.025); }
+.admin-kicker { color:#c5a77d; font-size:9px; font-weight:700; letter-spacing:1.7px; }
+.admin-login-card h1, .admin-heading h1 { margin:26px 0 14px; font:400 clamp(48px,7vw,76px)/1 Georgia,serif; letter-spacing:-.055em; }
+.admin-login-card h1 em, .admin-heading h1 em { color:#c5a77d; font-weight:400; }
+.admin-login-card > p, .admin-heading > p { max-width:620px; color:#aeb9c8; font-size:13px; line-height:1.9; }
+.admin-login-card form { display:grid; gap:12px; margin-top:34px; }
+.admin-login-card label, .admin-field label { color:#8e9caf; font-size:8px; font-weight:700; letter-spacing:1.25px; }
+.admin-login-card input, .admin-field input, .admin-field textarea { width:100%; border:1px solid rgba(220,228,238,.18); border-radius:0; outline:none; background:#101d2e; color:#f1eee8; padding:13px 14px; font:inherit; font-size:12px; }
+.admin-login-card input:focus, .admin-field input:focus, .admin-field textarea:focus { border-color:#c5a77d; }
+.admin-primary-button, .admin-quiet-button { min-height:43px; padding:0 17px; border:1px solid #c5a77d; border-radius:0; font-size:9px; font-weight:700; letter-spacing:1px; cursor:pointer; transition:background .2s ease,color .2s ease,opacity .2s ease; }
+.admin-primary-button { background:#c5a77d; color:#101722; }
+.admin-primary-button:hover { background:#ddc6a4; }
+.admin-quiet-button { background:transparent; color:#e9e3d9; border-color:rgba(220,228,238,.25); }
+.admin-quiet-button:hover { border-color:#c5a77d; color:#c5a77d; }
+.admin-primary-button:disabled, .admin-quiet-button:disabled { opacity:.35; cursor:not-allowed; }
+.admin-footnote { display:block; margin-top:28px; color:#75849a; font-size:8px; letter-spacing:1.3px; }
+.admin-error { color:#ffaaa2 !important; font-size:11px !important; }
+.admin-topbar { display:flex; justify-content:space-between; align-items:center; padding-bottom:26px; border-bottom:1px solid rgba(220,228,238,.14); }
+.admin-heading { padding:70px 0 40px; }
+.admin-heading h1 { margin-top:22px; }
+.admin-toolbar { display:flex; align-items:center; gap:38px; padding:22px 0; border-top:1px solid rgba(220,228,238,.16); border-bottom:1px solid rgba(220,228,238,.16); }
+.admin-toolbar > div:not(.admin-toolbar-actions) { display:grid; gap:6px; }
+.admin-toolbar strong { font:400 27px Georgia,serif; color:#c5a77d; }
+.admin-toolbar span { color:#8e9caf; font-size:8px; font-weight:700; letter-spacing:1.2px; }
+.admin-toolbar-actions { display:flex; gap:10px; margin-left:auto; }
+.admin-alert, .admin-draft-note { margin:18px 0 0; padding:13px 15px; font-size:11px; line-height:1.7; border:1px solid rgba(220,228,238,.16); }
+.admin-alert-error { color:#ffaaa2; border-color:rgba(255,170,162,.35); }
+.admin-alert-success { color:#b7d8bd; border-color:rgba(183,216,189,.3); }
+.admin-draft-note { color:#e2c99f; border-color:rgba(197,167,125,.35); }
+.admin-project-list { display:grid; gap:18px; padding:28px 0 50px; }
+.admin-project-card { padding:23px; border:1px solid rgba(220,228,238,.14); background:rgba(255,255,255,.025); }
+.admin-project-topline { display:flex; justify-content:space-between; align-items:center; gap:20px; margin-bottom:22px; color:#c5a77d; font-size:8px; font-weight:700; letter-spacing:1.3px; }
+.admin-reorder { display:flex; align-items:center; gap:7px; }
+.admin-reorder button { min-width:30px; height:29px; border:1px solid rgba(220,228,238,.2); background:transparent; color:#e9e3d9; cursor:pointer; }
+.admin-reorder button:disabled { opacity:.25; cursor:not-allowed; }
+.admin-reorder .admin-delete { margin-left:8px; padding:0 10px; color:#ffaaa2; border-color:rgba(255,170,162,.3); font-size:8px; letter-spacing:1px; }
+.admin-fields-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.admin-field { display:grid; gap:8px; min-width:0; }
+.admin-field-wide { grid-column:1 / -1; }
+.admin-field textarea { resize:vertical; line-height:1.7; }
+.admin-feature-toggle { display:flex; align-items:center; align-self:end; gap:10px; min-height:43px; color:#e2c99f; font-size:9px; font-weight:700; letter-spacing:1px; }
+.admin-feature-toggle input { width:15px; height:15px; accent-color:#c5a77d; }
+.admin-bottom-bar { position:sticky; bottom:0; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:15px 18px; margin:0 -18px; border:1px solid rgba(220,228,238,.15); background:rgba(11,20,34,.94); backdrop-filter:blur(14px); }
+.admin-bottom-bar span { color:#8e9caf; font-size:8px; font-weight:700; letter-spacing:1.2px; }
+.admin-muted { color:#aeb9c8; font-size:12px; }
+@media(max-width:760px) {
+  .admin-shell { padding:22px 6% 58px; }
+  .admin-login-card { padding:30px 23px; }
+  .admin-heading { padding:52px 0 30px; }
+  .admin-toolbar { align-items:flex-start; flex-wrap:wrap; gap:22px; }
+  .admin-toolbar-actions { width:100%; margin-left:0; }
+  .admin-toolbar-actions button { flex:1; padding:0 8px; font-size:8px; }
+  .admin-project-card { padding:17px 13px; }
+  .admin-fields-grid { grid-template-columns:1fr; gap:14px; }
+  .admin-field-wide { grid-column:auto; }
+  .admin-project-topline { align-items:flex-start; }
+  .admin-reorder { gap:4px; }
+  .admin-reorder button { min-width:27px; }
+  .admin-bottom-bar { margin:0 -8px; padding:12px 10px; }
+  .admin-bottom-bar span { max-width:130px; line-height:1.6; }
+  .admin-bottom-bar button { font-size:8px; padding:0 10px; }
+}
