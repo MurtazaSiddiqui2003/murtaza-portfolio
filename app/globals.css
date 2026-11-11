@@ -580,7 +580,8 @@ img, video, iframe { max-width: 100%; }
 
 /* Full-screen project preview */
 .showcase-preview { cursor: default; }
-.showcase-iframe { pointer-events: none; }
+/* Keep the embedded site fully usable; only the dedicated expand button opens the modal. */
+.showcase-iframe { pointer-events: auto; }
 .preview-open-trigger {
   position: absolute;
   right: 14px;
