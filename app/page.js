@@ -40,6 +40,7 @@ const process = [
 const projects = [
   {
     number: "01",
+    featured: true,
     type: "CLIENT WEBSITE",
     title: "Sterling Bloom",
     description: "A refined digital home for an event design and decor business, with custom site functionality and an administrative experience.",
@@ -51,6 +52,7 @@ const projects = [
   },
   {
     number: "02",
+    featured: true,
     type: "BUSINESS WEBSITE",
     title: "CRC Core",
     description: "A focused business website built to give the brand a clear online presence, supported by custom content and admin functionality.",
@@ -62,6 +64,17 @@ const projects = [
   },
   {
     number: "03",
+    featured: true,
+    type: "CORPORATE WEBSITE · IN DEVELOPMENT",
+    title: "Naeem Impex",
+    description: "A corporate digital presence for a textile and apparel manufacturer, focused on communicating its in-house production capabilities.",
+    tags: ["Corporate website", "Textile manufacturing", "Next.js"],
+    href: null,
+    status: "IN DEVELOPMENT",
+  },
+  {
+    number: "04",
+    featured: true,
     type: "MULTI-STORE E-COMMERCE",
     title: "Eisha's Collection",
     description: "A connected fashion, beauty and jewelry brand direction, bringing multiple storefront ideas into one cohesive digital identity.",
@@ -72,7 +85,7 @@ const projects = [
     theme: "project-art-eisha",
   },
   {
-    number: "04",
+    number: "05",
     type: "FASHION EDITORIAL CONCEPT",
     title: "ForMe",
     description: "A luxury fashion lookbook concept exploring editorial art direction, considered typography and expressive motion.",
@@ -83,7 +96,7 @@ const projects = [
     theme: "project-art-forme",
   },
   {
-    number: "05",
+    number: "06",
     type: "CREATIVE PROFESSIONAL PORTFOLIO",
     title: "Junaid's Portfolio",
     description: "A bold portfolio for a fashion and technical designer, bringing technical drawings, graphic design and creative work together.",
@@ -94,7 +107,7 @@ const projects = [
     theme: "project-art-junaid",
   },
   {
-    number: "06",
+    number: "07",
     type: "PERSONAL DIGITAL EXPERIENCE",
     title: "Eishaverse",
     description: "A premium personal universe designed to bring personality, memories and meaningful details into one expressive digital experience.",
@@ -189,10 +202,10 @@ export default function Home() {
           </div>
 
           <div className="project-showcase-grid">
-            {projects.map((project) => (
+            {projects.filter((project) => project.featured).map((project) => (
               <Reveal key={project.number}>
                 <article className="showcase-card">
-                  <ProjectPreview title={project.title} href={project.href} />
+                  {project.href ? <ProjectPreview title={project.title} href={project.href} /> : <div className="showcase-preview showcase-preview-pending"><span className="pending-mark">NI.</span><span className="pending-label">CORPORATE WEBSITE<br/>IN DEVELOPMENT</span></div>}
                   <div className="showcase-card-info">
                     <div className="showcase-card-meta">
                       <span>{project.number} / {project.type}</span>
@@ -208,6 +221,7 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+          <div className="work-archive-link"><span>EXPLORE THE FULL BODY OF WORK</span><a href="/work">VIEW ALL PROJECTS <b>↗</b></a></div>
           <p className="work-note">
             Live previews are embedded where supported. If a website limits embedded viewing,
             use the OPEN link above to explore the full experience.
