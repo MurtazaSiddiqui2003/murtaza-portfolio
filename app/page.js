@@ -43,6 +43,7 @@ const projects = [
     featured: true,
     type: "CLIENT WEBSITE",
     title: "Sterling Bloom",
+    caseStudyPath: "/work/sterling-bloom",
     description: "A refined digital home for an event design and decor business, with custom site functionality and an administrative experience.",
     tags: ["Next.js", "Responsive design", "Admin experience"],
     href: "https://sterlingbloom.vercel.app/",
@@ -55,6 +56,7 @@ const projects = [
     featured: true,
     type: "BUSINESS WEBSITE",
     title: "CRC Core",
+    caseStudyPath: "/work/crc-core",
     description: "A focused business website built to give the brand a clear online presence, supported by custom content and admin functionality.",
     tags: ["Web development", "Content structure", "Admin features"],
     href: "https://thecrccore.vercel.app/",
@@ -67,6 +69,7 @@ const projects = [
     featured: true,
     type: "CORPORATE WEBSITE · IN DEVELOPMENT",
     title: "Naeem Impex",
+    caseStudyPath: "/work/naeem-impex",
     description: "A corporate digital presence for a textile and apparel manufacturer, focused on communicating its in-house production capabilities.",
     tags: ["Corporate website", "Textile manufacturing", "Next.js"],
     href: null,
@@ -77,6 +80,7 @@ const projects = [
     featured: true,
     type: "MULTI-STORE E-COMMERCE",
     title: "Eisha's Collection",
+    caseStudyPath: "/work/eishas-collection",
     description: "A connected fashion, beauty and jewelry brand direction, bringing multiple storefront ideas into one cohesive digital identity.",
     tags: ["E-commerce", "Brand direction", "Storefronts"],
     href: "https://eishas.vercel.app/",
@@ -216,8 +220,8 @@ export default function Home() {
                     <div className="tags">
                       {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                     </div>
-                    {project.title === "Sterling Bloom" && (
-                      <a className="case-study-card-link" href="/work/sterling-bloom">
+                    {project.caseStudyPath && (
+                      <a className="case-study-card-link" href={project.caseStudyPath}>
                         READ CASE STUDY <span>↗</span>
                       </a>
                     )}
