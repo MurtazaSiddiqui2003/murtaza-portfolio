@@ -1,5 +1,6 @@
 import SiteHeader from "./components/site-header";
-import Reveal from "./components/reveal";\nimport ProjectPreview from "./components/project-preview";
+import Reveal from "./components/reveal";
+import ProjectPreview from "./components/project-preview";
 
 const services = [
   {
