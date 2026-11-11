@@ -29,7 +29,7 @@ export default async function ProjectCaseStudy({ params }) {
         <section className="case-hero dark-section">
           <div className="case-hero-inner">
             <p className="eyebrow light-eyebrow"><span className="status-dot" /> CASE STUDY / {project.number}<span className="eyebrow-line" /> {project.category}</p>
-            <Reveal><h1>{project.title.split(" ").slice(0, -1).join(" ")}<br /><em>{project.title.split(" ").slice(-1)[0]}.</em></h1></Reveal>
+            <Reveal><h1>{project.title}<em>.</em></h1></Reveal>
             <div className="case-hero-bottom">
               <p>{project.summary}</p>
               {project.url ? <a className="case-live-link" href={project.url} target="_blank" rel="noreferrer">VISIT LIVE WEBSITE <span>↗</span></a> : <span className="archive-status">{project.status}</span>}
