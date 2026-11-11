@@ -8,7 +8,7 @@ export default function ProjectPreview({ title, href }) {
   const [mounted, setMounted] = useState(false);
   const closeButtonRef = useRef(null);
   const triggerRef = useRef(null);
-  const address = href.replace(/^https?:\\/\\//, "").replace(/\\/$/, "");
+  const address = new URL(href).host;
 
   useEffect(() => {
     setMounted(true);
