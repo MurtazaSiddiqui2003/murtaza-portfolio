@@ -1,5 +1,5 @@
 import SiteHeader from "./components/site-header";
-import Reveal from "./components/reveal";
+import Reveal from "./components/reveal";\nimport ProjectPreview from "./components/project-preview";
 
 const services = [
   {
@@ -191,25 +191,7 @@ export default function Home() {
             {projects.map((project) => (
               <Reveal key={project.number}>
                 <article className="showcase-card">
-                  <div className="showcase-preview">
-                    <div className="preview-browser-bar">
-                      <span className="preview-dots"><i /><i /><i /></span>
-                      <span className="preview-address">{project.href.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span>
-                      <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} in a new tab`}>OPEN ↗</a>
-                    </div>
-                    <iframe
-                      className="showcase-iframe"
-                      src={project.href}
-                      title={`${project.title} live website preview`}
-                      loading="lazy"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                    />
-                    <div className="preview-fallback">
-                      <span>Preview unavailable?</span>
-                      <a href={project.href} target="_blank" rel="noreferrer">Visit the live website ↗</a>
-                    </div>
-                  </div>
-                  <div className="showcase-card-info">
+                  <ProjectPreview title={project.title} href={project.href} />\n                  <div className="showcase-card-info">
                     <div className="showcase-card-meta">
                       <span>{project.number} / {project.type}</span>
                       <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title}`}>↗</a>
