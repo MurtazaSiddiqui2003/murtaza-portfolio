@@ -209,7 +209,7 @@ export default function Home() {
                   <div className="showcase-card-info">
                     <div className="showcase-card-meta">
                       <span>{project.number} / {project.type}</span>
-                      <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title}`}>↗</a>
+                      {project.href ? <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title}`}>↗</a> : <span className="archive-status">{project.status}</span>}
                     </div>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
@@ -223,8 +223,7 @@ export default function Home() {
           </div>
           <div className="work-archive-link"><span>EXPLORE THE FULL BODY OF WORK</span><a href="/work">VIEW ALL PROJECTS <b>↗</b></a></div>
           <p className="work-note">
-            Live previews are embedded where supported. If a website limits embedded viewing,
-            use the OPEN link above to explore the full experience.
+            Live previews are embedded where supported. Projects still in development or awaiting a public preview are clearly marked.
           </p>
         </section>
 
