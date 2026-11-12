@@ -908,3 +908,11 @@ img, video, iframe { max-width: 100%; }
   .admin-bottom-bar span { max-width:130px; line-height:1.6; }
   .admin-bottom-bar button { font-size:8px; padding:0 10px; }
 }
+
+
+/* Use the dedicated portrait hero artwork on phones and small tablets. */
+@media (max-width: 760px) {
+  .hero::before {
+    background: linear-gradient(180deg, rgba(18,19,17,.72) 0%, rgba(18,19,17,.58) 52%, rgba(18,19,17,.78) 100%), url("/images/hero-mobile.jpg") center center / cover no-repeat;
+  }
+}
