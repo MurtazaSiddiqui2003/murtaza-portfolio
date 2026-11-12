@@ -175,5 +175,17 @@
     ],
     "href": null,
     "status": "COLLECTION IN PROGRESS"
+  },
+  {
+    "number": "11",
+    "featured": false,
+    "type": "PROJECT",
+    "category": "PROJECT",
+    "title": "New project",
+    "slug": "new-project-386608",
+    "description": "",
+    "tags": [],
+    "href": "",
+    "status": "IN PROGRESS"
   }
 ]
