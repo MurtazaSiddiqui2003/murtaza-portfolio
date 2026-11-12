@@ -39,7 +39,7 @@
   },
   {
     "number": "03",
-    "featured": true,
+    "featured": false,
     "type": "CORPORATE WEBSITE · IN DEVELOPMENT",
     "category": "CORPORATE WEBSITE · IN DEVELOPMENT",
     "title": "Naeem Impex",
@@ -77,7 +77,7 @@
   },
   {
     "number": "05",
-    "featured": false,
+    "featured": true,
     "type": "FASHION EDITORIAL CONCEPT",
     "category": "FASHION EDITORIAL CONCEPT",
     "title": "ForMe",
