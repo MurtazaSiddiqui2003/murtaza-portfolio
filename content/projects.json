@@ -39,7 +39,7 @@
   },
   {
     "number": "03",
-    "featured": false,
+    "featured": true,
     "type": "CORPORATE WEBSITE · IN DEVELOPMENT",
     "category": "CORPORATE WEBSITE · IN DEVELOPMENT",
     "title": "Naeem Impex",
@@ -51,7 +51,7 @@
       "Textile manufacturing",
       "Next.js"
     ],
-    "href": null,
+    "href": "https://naeemimpex.vercel.app",
     "status": "IN DEVELOPMENT",
     "mark": "NI.",
     "line": "CORPORATE WEBSITE"
@@ -77,7 +77,7 @@
   },
   {
     "number": "05",
-    "featured": true,
+    "featured": false,
     "type": "FASHION EDITORIAL CONCEPT",
     "category": "FASHION EDITORIAL CONCEPT",
     "title": "ForMe",
@@ -142,8 +142,8 @@
       "Personal brand",
       "Creative direction"
     ],
-    "href": null,
-    "status": "PREVIEW TO BE ADDED"
+    "href": "https://eisha-nadeem.vercel.app",
+    "status": ""
   },
   {
     "number": "09",
@@ -157,23 +157,23 @@
       "Creative development",
       "Personal project"
     ],
-    "href": null,
-    "status": "PREVIEW TO BE ADDED"
+    "href": "",
+    "status": ""
   },
   {
     "number": "10",
     "featured": false,
     "type": "EXPERIMENTS & SIDE PROJECTS",
     "category": "EXPERIMENTS & SIDE PROJECTS",
-    "title": "My Surge Projects",
-    "slug": "my-surge-projects",
+    "title": "Weather App",
+    "slug": "weather-app",
     "description": "A collection of experiments, small builds and explorations across web development and digital experiences.",
     "tags": [
       "Experiments",
       "Web development",
       "Learning"
     ],
-    "href": null,
-    "status": "COLLECTION IN PROGRESS"
+    "href": "https:weather-app-by-murtaza.surge.sh",
+    "status": ""
   }
 ]
