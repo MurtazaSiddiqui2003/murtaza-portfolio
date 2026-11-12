@@ -39,22 +39,21 @@
   },
   {
     "number": "03",
-    "featured": true,
-    "type": "CORPORATE WEBSITE · IN DEVELOPMENT",
-    "category": "CORPORATE WEBSITE · IN DEVELOPMENT",
-    "title": "Naeem Impex",
-    "slug": "naeem-impex",
-    "caseStudyPath": "/work/naeem-impex",
-    "description": "A corporate digital presence for a textile and apparel manufacturer, focused on communicating its in-house production capabilities.",
+    "featured": false,
+    "type": "FASHION EDITORIAL CONCEPT",
+    "category": "FASHION EDITORIAL CONCEPT",
+    "title": "ForMe",
+    "slug": "forme",
+    "description": "A luxury fashion lookbook concept exploring editorial art direction, considered typography and expressive motion.",
     "tags": [
-      "Corporate website",
-      "Textile manufacturing",
-      "Next.js"
+      "Next.js",
+      "GSAP",
+      "Editorial design"
     ],
-    "href": "https://naeemimpex.vercel.app",
-    "status": "IN DEVELOPMENT",
-    "mark": "NI.",
-    "line": "CORPORATE WEBSITE"
+    "href": "https://forme-mu-dun.vercel.app/",
+    "mark": "FORME",
+    "line": "THE ART OF DRESSING",
+    "theme": "project-art-forme"
   },
   {
     "number": "04",
@@ -77,21 +76,22 @@
   },
   {
     "number": "05",
-    "featured": false,
-    "type": "FASHION EDITORIAL CONCEPT",
-    "category": "FASHION EDITORIAL CONCEPT",
-    "title": "ForMe",
-    "slug": "forme",
-    "description": "A luxury fashion lookbook concept exploring editorial art direction, considered typography and expressive motion.",
+    "featured": true,
+    "type": "CORPORATE WEBSITE · IN DEVELOPMENT",
+    "category": "CORPORATE WEBSITE · IN DEVELOPMENT",
+    "title": "Naeem Impex",
+    "slug": "naeem-impex",
+    "caseStudyPath": "/work/naeem-impex",
+    "description": "A corporate digital presence for a textile and apparel manufacturer, focused on communicating its in-house production capabilities.",
     "tags": [
-      "Next.js",
-      "GSAP",
-      "Editorial design"
+      "Corporate website",
+      "Textile manufacturing",
+      "Next.js"
     ],
-    "href": "https://forme-mu-dun.vercel.app/",
-    "mark": "FORME",
-    "line": "THE ART OF DRESSING",
-    "theme": "project-art-forme"
+    "href": "https://naeemimpex.vercel.app",
+    "status": "IN DEVELOPMENT",
+    "mark": "NI.",
+    "line": "CORPORATE WEBSITE"
   },
   {
     "number": "06",
