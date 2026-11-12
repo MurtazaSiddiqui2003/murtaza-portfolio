@@ -4,8 +4,13 @@ import { isAdminRequest } from "../../../../lib/admin-auth";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const OWNER_REPO = process.env.GITHUB_REPOSITORY || "MurtazaSiddiqui2003/murtaza-portfolio";
-const BRANCH = process.env.GITHUB_CONTENT_BRANCH || "main";
+const OWNER_REPO = "MurtazaSiddiqui2003/murtaza-portfolio";
+const BRANCHES = [...new Set([
+  process.env.GITHUB_CONTENT_BRANCH,
+  process.env.VERCEL_GIT_COMMIT_REF,
+  "main",
+  "feature/portfolio-admin-cms",
+].filter(Boolean))];
 const FILE_PATH = "content/projects.json";
 
 function githubHeaders() {
@@ -20,13 +25,29 @@ function githubHeaders() {
 }
 
 async function readProjects() {
-  const response = await fetch(`https://api.github.com/repos/${OWNER_REPO}/contents/${FILE_PATH}?ref=${BRANCH}`, {
-    headers: githubHeaders(),
-    cache: "no-store",
-  });
-  if (!response.ok) throw new Error(`GitHub read failed (${response.status}).`);
-  const file = await response.json();
-  return { projects: JSON.parse(Buffer.from(file.content, "base64").toString("utf8")), sha: file.sha };
+  let lastStatus = 404;
+
+  for (const branch of BRANCHES) {
+    const response = await fetch(`https://api.github.com/repos/${OWNER_REPO}/contents/${FILE_PATH}?ref=${encodeURIComponent(branch)}`, {
+      headers: githubHeaders(),
+      cache: "no-store",
+    });
+
+    if (response.status === 404) {
+      lastStatus = 404;
+      continue;
+    }
+    if (!response.ok) throw new Error(`GitHub read failed (${response.status}) on branch ${branch}.`);
+
+    const file = await response.json();
+    return {
+      projects: JSON.parse(Buffer.from(file.content, "base64").toString("utf8")),
+      sha: file.sha,
+      branch,
+    };
+  }
+
+  throw new Error(`GitHub read failed (${lastStatus}). Checked branches: ${BRANCHES.join(", ")}.`);
 }
 
 export async function GET(request) {
@@ -62,7 +83,7 @@ export async function PUT(request) {
       }
     }
 
-    const { sha } = await readProjects();
+    const { sha, branch } = await readProjects();
     const response = await fetch(`https://api.github.com/repos/${OWNER_REPO}/contents/${FILE_PATH}`, {
       method: "PUT",
       headers: githubHeaders(),
@@ -70,7 +91,7 @@ export async function PUT(request) {
         message: "Update portfolio projects from admin",
         content: Buffer.from(JSON.stringify(projects, null, 2) + "\n", "utf8").toString("base64"),
         sha,
-        branch: BRANCH,
+        branch,
       }),
     });
 
