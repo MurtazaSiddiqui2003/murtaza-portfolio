@@ -39,7 +39,7 @@
   },
   {
     "number": "03",
-    "featured": false,
+    "featured": true,
     "type": "FASHION EDITORIAL CONCEPT",
     "category": "FASHION EDITORIAL CONCEPT",
     "title": "ForMe",
@@ -57,7 +57,7 @@
   },
   {
     "number": "04",
-    "featured": true,
+    "featured": false,
     "type": "MULTI-STORE E-COMMERCE",
     "category": "MULTI-STORE E-COMMERCE",
     "title": "Eisha's Collection",
